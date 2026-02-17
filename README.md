@@ -2,7 +2,7 @@
 
 Replication code for:
 
-> Berthet, E., Soytas, U., Ladenburg, J., & Morris, J. (2025). *Expected Value Added and Employment Impacts of Climate-Related Offshore CCS in Denmark.* Energy Economics.
+> Berthet, E., Soytas, U., Ladenburg, J., & Morris, J. (2025). *Expected Value Added and Employment Impacts of Climate-Related Offshore CCS in Denmark.*
 
 ## Overview
 
