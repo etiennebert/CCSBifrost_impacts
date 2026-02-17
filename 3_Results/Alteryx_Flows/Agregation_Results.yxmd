@@ -1,0 +1,2566 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="174" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Full_ID</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>
+          </RootName>
+          <Delimeters value="#" />
+          <NumFields value="5" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="282" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Full_ID" selected="False" type="Int32" size="4" />
+            <SelectField field="1" selected="True" rename="Scenario" />
+            <SelectField field="2" selected="True" rename="Hypothesis" />
+            <SelectField field="3" selected="True" rename="Phase" />
+            <SelectField field="4" selected="True" rename="Step" />
+            <SelectField field="5" selected="True" rename="Cost" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="438" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">..\..\5. MRIOs\1. GLORIA Data\GLORIA_label_detailed_country_domspil_indst_prd.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>GLORIA_label_detailed_country_domspil_indst_prd.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Origin_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" />
+            <Field name="Origin_sector" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" />
+            <Field name="Destination_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" />
+            <Field name="dom_spil" size="1073741823" source="Formula: IF [Origin_country]=[Destination_country] THEN &quot;dom&quot; ELSE &quot;spil&quot; ENDIF" type="V_WString" />
+            <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="534" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>39360</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 39360 rows</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="654" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="dom_spil" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="390" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="786" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Number_ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RecordID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Number_ID" selected="False" input="Left_" />
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="870" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="RecordID" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>RecordID - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2130" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>Value</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2024-04-16 20:08:11</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2024-04-16 20:08:11</StartDate>
+              <EndDate>2024-04-16 20:08:11</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Value] != 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2238" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="1033">
+            <Field field="RecordID" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>RecordID - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="2082" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\..\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Regions$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>0_GLORIA_ReadMe_057.xlsx
+Query=`Regions$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Lfd_Nr" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Regions$`" type="Double" />
+            <Field name="Region_acronyms" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Regions$`" type="V_String" />
+            <Field name="Region_names" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Regions$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="2406" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>Origin_country</FieldFind>
+          <FieldSearch>Lfd_Nr</FieldSearch>
+          <ReplaceFoundField>Region_acronyms</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2334" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="True" type="Byte" size="1" />
+            <SelectField field="Origin_country" selected="True" type="V_String" size="3" />
+            <SelectField field="Destination_country" selected="True" type="V_String" size="2147483647" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2274" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Lfd_Nr" selected="True" type="V_String" size="19" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="2730" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>Origin_sector</FieldFind>
+          <FieldSearch>Lfd_Nr</FieldSearch>
+          <ReplaceFoundField>Sector_names</ReplaceFoundField>
+          <FindMode>FindWhole</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="True" />
+          <ReplaceMode>Append</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields>
+            <Field field="Sector_names" />
+          </ReplaceAppendFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="2262" y="798" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">..\..\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Sectors$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>0_GLORIA_ReadMe_057.xlsx
+Query=`Sectors$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Lfd_Nr" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Sectors$`" type="Double" />
+            <Field name="Sector_names" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Sectors$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2406" y="798" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Lfd_Nr" selected="True" type="V_String" size="19" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2610" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Origin_sector" selected="True" type="V_String" size="3" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2826" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="Scenario" selected="True" />
+            <SelectField field="Hypothesis" selected="True" />
+            <SelectField field="Phase" selected="True" />
+            <SelectField field="Step" selected="True" />
+            <SelectField field="Cost" selected="True" />
+            <SelectField field="Origin_country" selected="True" />
+            <SelectField field="Origin_sector" selected="False" />
+            <SelectField field="Sector_names" selected="True" />
+            <SelectField field="Ind_prd" selected="True" />
+            <SelectField field="Value" selected="True" />
+            <SelectField field="Indicator" selected="True" />
+            <SelectField field="Category" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="270" y="678" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\..\5. MRIOs\4. Output\2024_VA_Net_Surplus_T_BIFROST_Full_59_country.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2024_VA_Net_Surplus_T_BIFROST_Full_59_country.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_VA_Net_Surplus_T_BIFROST_Full_59_country.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="270" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\..\5. MRIOs\4. Output\2024_employment_hs_T_BIFROST_Full_59_country.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2024_employment_hs_T_BIFROST_Full_59_country.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_employment_hs_T_BIFROST_Full_59_country.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="270" y="894" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\..\5. MRIOs\4. Output\2024_employment_ls_T_BIFROST_Full_59_country.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2024_employment_ls_T_BIFROST_Full_59_country.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_employment_ls_T_BIFROST_Full_59_country.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="270" y="1002" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\..\5. MRIOs\4. Output\2024_employment_ms_T_BIFROST_Full_59_country.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2024_employment_ms_T_BIFROST_Full_59_country.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_employment_ms_T_BIFROST_Full_59_country.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="270" y="1110" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\..\5. MRIOs\4. Output\2024_ghg_ar6_T_BIFROST_Full_59_country.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2024_ghg_ar6_T_BIFROST_Full_59_country.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_ghg_ar6_T_BIFROST_Full_59_country.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="438" y="678" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Net Surplus&quot;" field="Indicator" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Indicator = "Net Surplus"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="450" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;employment_hs&quot;" field="Indicator" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Indicator = "employment_hs"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="450" y="894" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;employment_ls&quot;" field="Indicator" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Indicator = "employment_ls"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="438" y="1002" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;employment_ms&quot;" field="Indicator" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Indicator = "employment_ms"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="438" y="1110" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;GHG&quot;" field="Indicator" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Indicator = "GHG"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1254" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="True">
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Field_1" selected="True" rename="Value" input="Right_" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1266" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="True">
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Field_1" selected="True" rename="Value" input="Right_" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1266" y="618" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="True">
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Field_1" selected="True" rename="Value" input="Right_" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1278" y="726" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="True">
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Field_1" selected="True" rename="Value" input="Right_" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1266" y="834" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="True">
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Field_1" selected="True" rename="Value" input="Right_" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2010" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>ByName</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="6" />
+                <Field name="Origin_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="7" />
+                <Field name="Origin_sector" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="8" />
+                <Field name="Destination_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="9" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="10" />
+                <Field name="Value" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_VA_Net_Surplus_T_BIFROST_Full_59_country.csv" type="Double" column="11" />
+                <Field name="Indicator" size="1073741823" source="Formula: &quot;Net Surplus&quot;" type="V_WString" column="12" />
+                <Field name="Category" size="1073741823" source="Formula: &quot;Value Added&quot;" type="V_WString" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="6" />
+                <Field name="Origin_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="7" />
+                <Field name="Origin_sector" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="8" />
+                <Field name="Destination_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="9" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="10" />
+                <Field name="Value" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_employment_hs_T_BIFROST_Full_59_country.csv" type="Double" column="11" />
+                <Field name="Indicator" size="1073741823" source="Formula: &quot;employment_hs&quot;" type="V_WString" column="12" />
+                <Field name="Category" size="1073741823" source="Formula: &quot;Employment&quot;" type="V_WString" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#3">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="6" />
+                <Field name="Origin_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="7" />
+                <Field name="Origin_sector" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="8" />
+                <Field name="Destination_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="9" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="10" />
+                <Field name="Value" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_employment_ls_T_BIFROST_Full_59_country.csv" type="Double" column="11" />
+                <Field name="Indicator" size="1073741823" source="Formula: &quot;employment_ls&quot;" type="V_WString" column="12" />
+                <Field name="Category" size="1073741823" source="Formula: &quot;Employment&quot;" type="V_WString" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#4">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="6" />
+                <Field name="Origin_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="7" />
+                <Field name="Origin_sector" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="8" />
+                <Field name="Destination_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="9" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="10" />
+                <Field name="Value" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_employment_ms_T_BIFROST_Full_59_country.csv" type="Double" column="11" />
+                <Field name="Indicator" size="1073741823" source="Formula: &quot;employment_ms&quot;" type="V_WString" column="12" />
+                <Field name="Category" size="1073741823" source="Formula: &quot;Employment&quot;" type="V_WString" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#5">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="6" />
+                <Field name="Origin_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="7" />
+                <Field name="Origin_sector" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="8" />
+                <Field name="Destination_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="9" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="10" />
+                <Field name="Value" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_ghg_ar6_T_BIFROST_Full_59_country.csv" type="Double" column="11" />
+                <Field name="Indicator" size="1073741823" source="Formula: &quot;GHG&quot;" type="V_WString" column="12" />
+                <Field name="Category" size="1073741823" source="Formula: &quot;GHG&quot;" type="V_WString" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#6">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="6" />
+                <Field name="Origin_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="7" />
+                <Field name="Origin_sector" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="8" />
+                <Field name="Destination_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="9" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="10" />
+                <Field name="Value" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_VA_Subsidies_Production_T_BIFROST_Full_59_country.csv" type="Double" column="11" />
+                <Field name="Indicator" size="1073741823" source="Formula: &quot;Subsidies&quot;" type="V_WString" column="12" />
+                <Field name="Category" size="1073741823" source="Formula: &quot;Value Added&quot;" type="V_WString" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#7">
+              <RecordInfo>
+                <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="6" />
+                <Field name="Origin_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="7" />
+                <Field name="Origin_sector" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="8" />
+                <Field name="Destination_country" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="Byte" column="9" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="10" />
+                <Field name="Value" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_VA_Taxes_Production_T_BIFROST_Full_59_country.csv" type="Double" column="11" />
+                <Field name="Indicator" size="1073741823" source="Formula: &quot;Taxes&quot;" type="V_WString" column="12" />
+                <Field name="Category" size="1073741823" source="Formula: &quot;Value Added&quot;" type="V_WString" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="3030" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="19" MaxRecords="">..\2. MRIOs_Output_DB\Full_DB_MRIO_Output.yxdb</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <NoSpatialIndex>False</NoSpatialIndex>
+            <SaveSource>True</SaveSource>
+            <WriteCompatibleVersion>False</WriteCompatibleVersion>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Full_DB_MRIO_Output.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="270" y="1242" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\..\5. MRIOs\4. Output\2024_VA_Subsidies_Production_T_BIFROST_Full_59_country.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2024_VA_Subsidies_Production_T_BIFROST_Full_59_country.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_VA_Subsidies_Production_T_BIFROST_Full_59_country.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="270" y="1374" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">..\..\5. MRIOs\4. Output\2024_VA_Taxes_Production_T_BIFROST_Full_59_country.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2024_VA_Taxes_Production_T_BIFROST_Full_59_country.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\5. MRIOs\4. Output\2024_VA_Taxes_Production_T_BIFROST_Full_59_country.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="438" y="1242" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Subsidies&quot;" field="Indicator" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Indicator = "Subsidies"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="426" y="1374" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Taxes&quot;" field="Indicator" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Indicator = "Taxes"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="582" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Employment&quot;" field="Category" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Category = "Employment"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="570" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Employment&quot;" field="Category" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Category = "Employment"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="570" y="1002" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Employment&quot;" field="Category" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Category = "Employment"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="570" y="666" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Value Added&quot;" field="Category" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Category = "Value Added"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="594" y="1206" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Value Added&quot;" field="Category" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Category = "Value Added"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="558" y="1374" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Value Added&quot;" field="Category" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Category = "Value Added"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="570" y="1098" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;GHG&quot;" field="Category" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Category = "GHG"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1254" y="942" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="True">
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Field_1" selected="True" rename="Value" input="Right_" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1254" y="1110" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="True">
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Field_1" selected="True" rename="Value" input="Right_" type="Double" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2922" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Scenario]=&quot;Scenario 1&quot; THEN &quot;Scenario A&quot; ELSE &quot;Scenario B&quot; ENDIF" field="Scenario" size="254" type="V_String" />
+            <FormulaField expression="'Hypothesis '+Right([Scenario], 1)+'_'+Right([Hypothesis], 1)" field="Hypothesis" size="254" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Scenario = IF [Scenario]="Scenario 1" THEN "Scenario A" ELSE "Scenario B" ENDIF
+...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>2_BIFROST_Input_Vektor_Label.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_2" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_3" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_4" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_5" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_6" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_7" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_8" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_9" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_10" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_11" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_12" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_13" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_14" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_15" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_16" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_17" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_18" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_19" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_20" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_21" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_22" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_23" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_24" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_25" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_26" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_27" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_28" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_29" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_30" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_31" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_32" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_33" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_34" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_35" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_36" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_37" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_38" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_39" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_40" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_41" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_42" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_43" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_44" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_45" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_46" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_47" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_48" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_49" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_50" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_51" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_52" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_53" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_54" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_55" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_56" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_57" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_58" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_59" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_60" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_61" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_62" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_63" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_64" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_65" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_66" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_67" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_68" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_69" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_70" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_71" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_72" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_73" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_74" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_75" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_76" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_77" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_78" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_79" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_80" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_81" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_82" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_83" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_84" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_85" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_86" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_87" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_88" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_89" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_90" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_91" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_92" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_93" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_94" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_95" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_96" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_97" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_98" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_99" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_100" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_101" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_102" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_103" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_104" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_105" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_106" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_107" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_108" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_109" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_110" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_111" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_112" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_113" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_114" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_115" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_116" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_117" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_118" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_119" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_120" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_121" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_122" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_123" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_124" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_125" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_126" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_127" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_128" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_129" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_130" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_131" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_132" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_133" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_134" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_135" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_136" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_137" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_138" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_139" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_140" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_141" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_142" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_143" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_144" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_145" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_146" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_147" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_148" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_149" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_150" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_151" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_152" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_153" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_154" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_155" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_156" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_157" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_158" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_159" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_160" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_161" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_162" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_163" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_164" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_165" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_166" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_167" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_168" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_169" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_170" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_171" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_172" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_173" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_174" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_175" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_176" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_177" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_178" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_179" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_180" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_181" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_182" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_183" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_184" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_185" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_186" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_187" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_188" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_189" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_190" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_191" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_192" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_193" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_194" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_195" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_196" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_197" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_198" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_199" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_200" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_201" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_202" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_203" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_204" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_205" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_206" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_207" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_208" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_209" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_210" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_211" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_212" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_213" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_214" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_215" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_216" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_217" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_218" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_219" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_220" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_221" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_222" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_223" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_224" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_225" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_226" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_227" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_228" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_229" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_230" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_231" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_232" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_233" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_234" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_235" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_236" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_237" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_238" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_239" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_240" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_241" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_242" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_243" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_244" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_245" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_246" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_247" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_248" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_249" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_250" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_251" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_252" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_253" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_254" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_255" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_256" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_257" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_258" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_259" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_260" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_261" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_262" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_263" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_264" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_265" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_266" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_267" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_268" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_269" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_270" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_271" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_272" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_273" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_274" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_275" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_276" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_277" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_278" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_279" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_280" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_281" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_282" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_283" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_284" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_285" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_286" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_287" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_288" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_289" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_290" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_291" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_292" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_293" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_294" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_295" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_296" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_297" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_298" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_299" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_300" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_301" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_302" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_303" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_304" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_305" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_306" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_307" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_308" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_309" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_310" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_311" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_312" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_313" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_314" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_315" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_316" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_317" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_318" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_319" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_320" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_321" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_322" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_323" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_324" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_325" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_326" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_327" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_328" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_329" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_330" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_331" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_332" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_333" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_334" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_335" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_336" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_337" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_338" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_339" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_340" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_341" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+            <Field name="Field_342" size="254" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\2_BIFROST_Input_Vektor_Label.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="342" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="RecordID" />
+          </KeyFields>
+          <DataFields>
+            <Field field="RecordID" selected="False" />
+            <Field field="Field_1" selected="True" />
+            <Field field="Field_2" selected="True" />
+            <Field field="Field_3" selected="True" />
+            <Field field="Field_4" selected="True" />
+            <Field field="Field_5" selected="True" />
+            <Field field="Field_6" selected="True" />
+            <Field field="Field_7" selected="True" />
+            <Field field="Field_8" selected="True" />
+            <Field field="Field_9" selected="True" />
+            <Field field="Field_10" selected="True" />
+            <Field field="Field_11" selected="True" />
+            <Field field="Field_12" selected="True" />
+            <Field field="Field_13" selected="True" />
+            <Field field="Field_14" selected="True" />
+            <Field field="Field_15" selected="True" />
+            <Field field="Field_16" selected="True" />
+            <Field field="Field_17" selected="True" />
+            <Field field="Field_18" selected="True" />
+            <Field field="Field_19" selected="True" />
+            <Field field="Field_20" selected="True" />
+            <Field field="Field_21" selected="True" />
+            <Field field="Field_22" selected="True" />
+            <Field field="Field_23" selected="True" />
+            <Field field="Field_24" selected="True" />
+            <Field field="Field_25" selected="True" />
+            <Field field="Field_26" selected="True" />
+            <Field field="Field_27" selected="True" />
+            <Field field="Field_28" selected="True" />
+            <Field field="Field_29" selected="True" />
+            <Field field="Field_30" selected="True" />
+            <Field field="Field_31" selected="True" />
+            <Field field="Field_32" selected="True" />
+            <Field field="Field_33" selected="True" />
+            <Field field="Field_34" selected="True" />
+            <Field field="Field_35" selected="True" />
+            <Field field="Field_36" selected="True" />
+            <Field field="Field_37" selected="True" />
+            <Field field="Field_38" selected="True" />
+            <Field field="Field_39" selected="True" />
+            <Field field="Field_40" selected="True" />
+            <Field field="Field_41" selected="True" />
+            <Field field="Field_42" selected="True" />
+            <Field field="Field_43" selected="True" />
+            <Field field="Field_44" selected="True" />
+            <Field field="Field_45" selected="True" />
+            <Field field="Field_46" selected="True" />
+            <Field field="Field_47" selected="True" />
+            <Field field="Field_48" selected="True" />
+            <Field field="Field_49" selected="True" />
+            <Field field="Field_50" selected="True" />
+            <Field field="Field_51" selected="True" />
+            <Field field="Field_52" selected="True" />
+            <Field field="Field_53" selected="True" />
+            <Field field="Field_54" selected="True" />
+            <Field field="Field_55" selected="True" />
+            <Field field="Field_56" selected="True" />
+            <Field field="Field_57" selected="True" />
+            <Field field="Field_58" selected="True" />
+            <Field field="Field_59" selected="True" />
+            <Field field="Field_60" selected="True" />
+            <Field field="Field_61" selected="True" />
+            <Field field="Field_62" selected="True" />
+            <Field field="Field_63" selected="True" />
+            <Field field="Field_64" selected="True" />
+            <Field field="Field_65" selected="True" />
+            <Field field="Field_66" selected="True" />
+            <Field field="Field_67" selected="True" />
+            <Field field="Field_68" selected="True" />
+            <Field field="Field_69" selected="True" />
+            <Field field="Field_70" selected="True" />
+            <Field field="Field_71" selected="True" />
+            <Field field="Field_72" selected="True" />
+            <Field field="Field_73" selected="True" />
+            <Field field="Field_74" selected="True" />
+            <Field field="Field_75" selected="True" />
+            <Field field="Field_76" selected="True" />
+            <Field field="Field_77" selected="True" />
+            <Field field="Field_78" selected="True" />
+            <Field field="Field_79" selected="True" />
+            <Field field="Field_80" selected="True" />
+            <Field field="Field_81" selected="True" />
+            <Field field="Field_82" selected="True" />
+            <Field field="Field_83" selected="True" />
+            <Field field="Field_84" selected="True" />
+            <Field field="Field_85" selected="True" />
+            <Field field="Field_86" selected="True" />
+            <Field field="Field_87" selected="True" />
+            <Field field="Field_88" selected="True" />
+            <Field field="Field_89" selected="True" />
+            <Field field="Field_90" selected="True" />
+            <Field field="Field_91" selected="True" />
+            <Field field="Field_92" selected="True" />
+            <Field field="Field_93" selected="True" />
+            <Field field="Field_94" selected="True" />
+            <Field field="Field_95" selected="True" />
+            <Field field="Field_96" selected="True" />
+            <Field field="Field_97" selected="True" />
+            <Field field="Field_98" selected="True" />
+            <Field field="Field_99" selected="True" />
+            <Field field="Field_100" selected="True" />
+            <Field field="Field_101" selected="True" />
+            <Field field="Field_102" selected="True" />
+            <Field field="Field_103" selected="True" />
+            <Field field="Field_104" selected="True" />
+            <Field field="Field_105" selected="True" />
+            <Field field="Field_106" selected="True" />
+            <Field field="Field_107" selected="True" />
+            <Field field="Field_108" selected="True" />
+            <Field field="Field_109" selected="True" />
+            <Field field="Field_110" selected="True" />
+            <Field field="Field_111" selected="True" />
+            <Field field="Field_112" selected="True" />
+            <Field field="Field_113" selected="True" />
+            <Field field="Field_114" selected="True" />
+            <Field field="Field_115" selected="True" />
+            <Field field="Field_116" selected="True" />
+            <Field field="Field_117" selected="True" />
+            <Field field="Field_118" selected="True" />
+            <Field field="Field_119" selected="True" />
+            <Field field="Field_120" selected="True" />
+            <Field field="Field_121" selected="True" />
+            <Field field="Field_122" selected="True" />
+            <Field field="Field_123" selected="True" />
+            <Field field="Field_124" selected="True" />
+            <Field field="Field_125" selected="True" />
+            <Field field="Field_126" selected="True" />
+            <Field field="Field_127" selected="True" />
+            <Field field="Field_128" selected="True" />
+            <Field field="Field_129" selected="True" />
+            <Field field="Field_130" selected="True" />
+            <Field field="Field_131" selected="True" />
+            <Field field="Field_132" selected="True" />
+            <Field field="Field_133" selected="True" />
+            <Field field="Field_134" selected="True" />
+            <Field field="Field_135" selected="True" />
+            <Field field="Field_136" selected="True" />
+            <Field field="Field_137" selected="True" />
+            <Field field="Field_138" selected="True" />
+            <Field field="Field_139" selected="True" />
+            <Field field="Field_140" selected="True" />
+            <Field field="Field_141" selected="True" />
+            <Field field="Field_142" selected="True" />
+            <Field field="Field_143" selected="True" />
+            <Field field="Field_144" selected="True" />
+            <Field field="Field_145" selected="True" />
+            <Field field="Field_146" selected="True" />
+            <Field field="Field_147" selected="True" />
+            <Field field="Field_148" selected="True" />
+            <Field field="Field_149" selected="True" />
+            <Field field="Field_150" selected="True" />
+            <Field field="Field_151" selected="True" />
+            <Field field="Field_152" selected="True" />
+            <Field field="Field_153" selected="True" />
+            <Field field="Field_154" selected="True" />
+            <Field field="Field_155" selected="True" />
+            <Field field="Field_156" selected="True" />
+            <Field field="Field_157" selected="True" />
+            <Field field="Field_158" selected="True" />
+            <Field field="Field_159" selected="True" />
+            <Field field="Field_160" selected="True" />
+            <Field field="Field_161" selected="True" />
+            <Field field="Field_162" selected="True" />
+            <Field field="Field_163" selected="True" />
+            <Field field="Field_164" selected="True" />
+            <Field field="Field_165" selected="True" />
+            <Field field="Field_166" selected="True" />
+            <Field field="Field_167" selected="True" />
+            <Field field="Field_168" selected="True" />
+            <Field field="Field_169" selected="True" />
+            <Field field="Field_170" selected="True" />
+            <Field field="Field_171" selected="True" />
+            <Field field="Field_172" selected="True" />
+            <Field field="Field_173" selected="True" />
+            <Field field="Field_174" selected="True" />
+            <Field field="Field_175" selected="True" />
+            <Field field="Field_176" selected="True" />
+            <Field field="Field_177" selected="True" />
+            <Field field="Field_178" selected="True" />
+            <Field field="Field_179" selected="True" />
+            <Field field="Field_180" selected="True" />
+            <Field field="Field_181" selected="True" />
+            <Field field="Field_182" selected="True" />
+            <Field field="Field_183" selected="True" />
+            <Field field="Field_184" selected="True" />
+            <Field field="Field_185" selected="True" />
+            <Field field="Field_186" selected="True" />
+            <Field field="Field_187" selected="True" />
+            <Field field="Field_188" selected="True" />
+            <Field field="Field_189" selected="True" />
+            <Field field="Field_190" selected="True" />
+            <Field field="Field_191" selected="True" />
+            <Field field="Field_192" selected="True" />
+            <Field field="Field_193" selected="True" />
+            <Field field="Field_194" selected="True" />
+            <Field field="Field_195" selected="True" />
+            <Field field="Field_196" selected="True" />
+            <Field field="Field_197" selected="True" />
+            <Field field="Field_198" selected="True" />
+            <Field field="Field_199" selected="True" />
+            <Field field="Field_200" selected="True" />
+            <Field field="Field_201" selected="True" />
+            <Field field="Field_202" selected="True" />
+            <Field field="Field_203" selected="True" />
+            <Field field="Field_204" selected="True" />
+            <Field field="Field_205" selected="True" />
+            <Field field="Field_206" selected="True" />
+            <Field field="Field_207" selected="True" />
+            <Field field="Field_208" selected="True" />
+            <Field field="Field_209" selected="True" />
+            <Field field="Field_210" selected="True" />
+            <Field field="Field_211" selected="True" />
+            <Field field="Field_212" selected="True" />
+            <Field field="Field_213" selected="True" />
+            <Field field="Field_214" selected="True" />
+            <Field field="Field_215" selected="True" />
+            <Field field="Field_216" selected="True" />
+            <Field field="Field_217" selected="True" />
+            <Field field="Field_218" selected="True" />
+            <Field field="Field_219" selected="True" />
+            <Field field="Field_220" selected="True" />
+            <Field field="Field_221" selected="True" />
+            <Field field="Field_222" selected="True" />
+            <Field field="Field_223" selected="True" />
+            <Field field="Field_224" selected="True" />
+            <Field field="Field_225" selected="True" />
+            <Field field="Field_226" selected="True" />
+            <Field field="Field_227" selected="True" />
+            <Field field="Field_228" selected="True" />
+            <Field field="Field_229" selected="True" />
+            <Field field="Field_230" selected="True" />
+            <Field field="Field_231" selected="True" />
+            <Field field="Field_232" selected="True" />
+            <Field field="Field_233" selected="True" />
+            <Field field="Field_234" selected="True" />
+            <Field field="Field_235" selected="True" />
+            <Field field="Field_236" selected="True" />
+            <Field field="Field_237" selected="True" />
+            <Field field="Field_238" selected="True" />
+            <Field field="Field_239" selected="True" />
+            <Field field="Field_240" selected="True" />
+            <Field field="Field_241" selected="True" />
+            <Field field="Field_242" selected="True" />
+            <Field field="Field_243" selected="True" />
+            <Field field="Field_244" selected="True" />
+            <Field field="Field_245" selected="True" />
+            <Field field="Field_246" selected="True" />
+            <Field field="Field_247" selected="True" />
+            <Field field="Field_248" selected="True" />
+            <Field field="Field_249" selected="True" />
+            <Field field="Field_250" selected="True" />
+            <Field field="Field_251" selected="True" />
+            <Field field="Field_252" selected="True" />
+            <Field field="Field_253" selected="True" />
+            <Field field="Field_254" selected="True" />
+            <Field field="Field_255" selected="True" />
+            <Field field="Field_256" selected="True" />
+            <Field field="Field_257" selected="True" />
+            <Field field="Field_258" selected="True" />
+            <Field field="Field_259" selected="True" />
+            <Field field="Field_260" selected="True" />
+            <Field field="Field_261" selected="True" />
+            <Field field="Field_262" selected="True" />
+            <Field field="Field_263" selected="True" />
+            <Field field="Field_264" selected="True" />
+            <Field field="Field_265" selected="True" />
+            <Field field="Field_266" selected="True" />
+            <Field field="Field_267" selected="True" />
+            <Field field="Field_268" selected="True" />
+            <Field field="Field_269" selected="True" />
+            <Field field="Field_270" selected="True" />
+            <Field field="Field_271" selected="True" />
+            <Field field="Field_272" selected="True" />
+            <Field field="Field_273" selected="True" />
+            <Field field="Field_274" selected="True" />
+            <Field field="Field_275" selected="True" />
+            <Field field="Field_276" selected="True" />
+            <Field field="Field_277" selected="True" />
+            <Field field="Field_278" selected="True" />
+            <Field field="Field_279" selected="True" />
+            <Field field="Field_280" selected="True" />
+            <Field field="Field_281" selected="True" />
+            <Field field="Field_282" selected="True" />
+            <Field field="Field_283" selected="True" />
+            <Field field="Field_284" selected="True" />
+            <Field field="Field_285" selected="True" />
+            <Field field="Field_286" selected="True" />
+            <Field field="Field_287" selected="True" />
+            <Field field="Field_288" selected="True" />
+            <Field field="Field_289" selected="True" />
+            <Field field="Field_290" selected="True" />
+            <Field field="Field_291" selected="True" />
+            <Field field="Field_292" selected="True" />
+            <Field field="Field_293" selected="True" />
+            <Field field="Field_294" selected="True" />
+            <Field field="Field_295" selected="True" />
+            <Field field="Field_296" selected="True" />
+            <Field field="Field_297" selected="True" />
+            <Field field="Field_298" selected="True" />
+            <Field field="Field_299" selected="True" />
+            <Field field="Field_300" selected="True" />
+            <Field field="Field_301" selected="True" />
+            <Field field="Field_302" selected="True" />
+            <Field field="Field_303" selected="True" />
+            <Field field="Field_304" selected="True" />
+            <Field field="Field_305" selected="True" />
+            <Field field="Field_306" selected="True" />
+            <Field field="Field_307" selected="True" />
+            <Field field="Field_308" selected="True" />
+            <Field field="Field_309" selected="True" />
+            <Field field="Field_310" selected="True" />
+            <Field field="Field_311" selected="True" />
+            <Field field="Field_312" selected="True" />
+            <Field field="Field_313" selected="True" />
+            <Field field="Field_314" selected="True" />
+            <Field field="Field_315" selected="True" />
+            <Field field="Field_316" selected="True" />
+            <Field field="Field_317" selected="True" />
+            <Field field="Field_318" selected="True" />
+            <Field field="Field_319" selected="True" />
+            <Field field="Field_320" selected="True" />
+            <Field field="Field_321" selected="True" />
+            <Field field="Field_322" selected="True" />
+            <Field field="Field_323" selected="True" />
+            <Field field="Field_324" selected="True" />
+            <Field field="Field_325" selected="True" />
+            <Field field="Field_326" selected="True" />
+            <Field field="Field_327" selected="True" />
+            <Field field="Field_328" selected="True" />
+            <Field field="Field_329" selected="True" />
+            <Field field="Field_330" selected="True" />
+            <Field field="Field_331" selected="True" />
+            <Field field="Field_332" selected="True" />
+            <Field field="Field_333" selected="True" />
+            <Field field="Field_334" selected="True" />
+            <Field field="Field_335" selected="True" />
+            <Field field="Field_336" selected="True" />
+            <Field field="Field_337" selected="True" />
+            <Field field="Field_338" selected="True" />
+            <Field field="Field_339" selected="True" />
+            <Field field="Field_340" selected="True" />
+            <Field field="Field_341" selected="True" />
+            <Field field="Field_342" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="150" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="438" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="510" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+        <Position x="606" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name />
+          <CreateField_Name>Index</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>254</CreateField_Size>
+          <Expression_Init>1</Expression_Init>
+          <Expression_Cond>[Index] &lt;= 39360</Expression_Cond>
+          <Expression_Loop>[Index] + 1</Expression_Loop>
+          <RecordCount value="13461120" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="702" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="Name" selected="False" />
+            <SelectField field="Value" selected="True" rename="Full_ID" />
+            <SelectField field="Index" selected="True" rename="Number_ID" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="72">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="2514" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>Destination_country</FieldFind>
+          <FieldSearch>Lfd_Nr</FieldSearch>
+          <ReplaceFoundField>Region_acronyms</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1854" y="1062" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Scenario" action="GroupBy" rename="Scenario" />
+            <SummarizeField field="Hypothesis" action="GroupBy" rename="Hypothesis" />
+            <SummarizeField field="Origin_country" action="GroupBy" rename="Origin_country" />
+            <SummarizeField field="Value" action="Sum" rename="Sum_Value" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="74">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1938" y="1062" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Origin_country</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2025-07-28 17:58:46</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>47</Operand>
+              <StartDate>2025-07-28 17:58:46</StartDate>
+              <EndDate>2025-07-28 17:58:46</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Origin_country] = 47</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="13" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Join" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="43" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="43" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="44" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="44" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="45" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Output" />
+      <Destination ToolID="45" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="46" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="46" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="47" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="47" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="61" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="61" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="62" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="62" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="True" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="72" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="72" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="23" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="23" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="26" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="26" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="43" Connection="Join" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="44" Connection="Join" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="45" Connection="Join" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="46" Connection="Join" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="47" Connection="Join" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="61" Connection="Join" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection name="#7">
+      <Origin ToolID="62" Connection="Join" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Join" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Agregation_Results</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="311a87cf-f087-4a40-8da0-734edcaedaee" />
+      <Telemetry>
+        <PreviousWorkflowId value="0e9a1404-8316-446d-b17e-ff88aab93e98" />
+        <OriginWorkflowId value="0e9a1404-8316-446d-b17e-ff88aab93e98" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

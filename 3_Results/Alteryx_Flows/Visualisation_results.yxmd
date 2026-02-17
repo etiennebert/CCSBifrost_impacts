@@ -1,0 +1,602 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\6. Results\2. MRIOs_Output_DB\Full_DB_MRIO_Output.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Full_DB_MRIO_Output.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="Formula: IF [Scenario]=&quot;Scenario 1&quot; THEN &quot;Scenario A&quot; ELSE &quot;Scenario B&quot; ENDIF" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="Formula: 'Hypothesis '+Right([Scenario], 1)+'_'+Right([Hypothesis], 1)" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" />
+            <Field name="Origin_country" size="3" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="V_String" />
+            <Field name="Sector_names" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Sectors$`" type="V_String" />
+            <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value" source="File: (Multiple Sources)" type="Double" />
+            <Field name="Indicator" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Category" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Destination_country" size="2147483647" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\6. Results\2. MRIOs_Output_DB\Full_DB_MRIO_Output_Rank1.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Full_DB_MRIO_Output_Rank1.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="Formula: IF [Scenario]=&quot;Scenario 1&quot; THEN &quot;Scenario A&quot; ELSE &quot;Scenario B&quot; ENDIF" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="Formula: 'Hypothesis '+Right([Scenario], 1)+'_'+Right([Hypothesis], 1)" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" />
+            <Field name="Origin_country" size="3" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="V_String" />
+            <Field name="Sector_names" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Sectors$`" type="V_String" />
+            <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value" source="File: (Multiple Sources)" type="Double" />
+            <Field name="Indicator" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Category" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Destination_country" size="2147483647" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="174" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Scenario" />
+            <Field field="Hypothesis" />
+            <Field field="Phase" />
+            <Field field="Step" />
+            <Field field="Cost" />
+            <Field field="Origin_country" />
+            <Field field="Sector_names" />
+            <Field field="Category" />
+            <Field field="Indicator" />
+            <Field field="Destination_country" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Scenario" />
+            <Field field="Hypothesis" />
+            <Field field="Phase" />
+            <Field field="Step" />
+            <Field field="Cost" />
+            <Field field="Origin_country" />
+            <Field field="Sector_names" />
+            <Field field="Category" />
+            <Field field="Indicator" />
+            <Field field="Destination_country" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Value" selected="True" rename="Full_Value" input="Left_" />
+                <SelectField field="Right_Scenario" selected="False" rename="Right_Scenario" input="Right_" />
+                <SelectField field="Right_Hypothesis" selected="False" rename="Right_Hypothesis" input="Right_" />
+                <SelectField field="Right_Phase" selected="False" rename="Right_Phase" input="Right_" />
+                <SelectField field="Right_Step" selected="False" rename="Right_Step" input="Right_" />
+                <SelectField field="Right_Cost" selected="False" rename="Right_Cost" input="Right_" />
+                <SelectField field="Right_Origin_country" selected="False" rename="Right_Origin_country" input="Right_" />
+                <SelectField field="Right_Sector_names" selected="False" rename="Right_Sector_names" input="Right_" />
+                <SelectField field="Right_Ind_prd" selected="False" rename="Right_Ind_prd" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Rank1_Value" input="Right_" />
+                <SelectField field="Right_Indicator" selected="False" rename="Right_Indicator" input="Right_" />
+                <SelectField field="Right_Category" selected="False" rename="Right_Category" input="Right_" />
+                <SelectField field="Right_Destination_country" selected="False" rename="Right_Destination_country" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="282" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>Custom</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="Formula: IF [Scenario]=&quot;Scenario 1&quot; THEN &quot;Scenario A&quot; ELSE &quot;Scenario B&quot; ENDIF" type="V_String" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="Formula: 'Hypothesis '+Right([Scenario], 1)+'_'+Right([Hypothesis], 1)" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field name="Origin_country" size="3" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="V_String" column="6" />
+                <Field name="Sector_names" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Sectors$`" type="V_String" column="7" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="8" />
+                <Field name="Full_Value" source="File: (Multiple Sources)" type="Double" column="9" />
+                <Field name="Indicator" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="10" />
+                <Field name="Category" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="11" />
+                <Field name="Rank1_Value" source="File: (Multiple Sources)" type="Double" column="12" />
+                <Field name="Destination_country" size="2147483647" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="V_String" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="Formula: IF [Scenario]=&quot;Scenario 1&quot; THEN &quot;Scenario A&quot; ELSE &quot;Scenario B&quot; ENDIF" type="V_String" column="1" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="Formula: 'Hypothesis '+Right([Scenario], 1)+'_'+Right([Hypothesis], 1)" type="V_String" column="2" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="3" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="4" />
+                <Field description="TextToColumns: Parsed from Full_ID" name="Cost" size="254" source="TextToColumns: Parsed from Full_ID" type="V_String" column="5" />
+                <Field name="Origin_country" size="3" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="V_String" column="6" />
+                <Field name="Sector_names" size="255" source="File: C:\Users\etber\OneDrive - Massachusetts Institute of Technology\Documents\CCS\4. Costs\0_GLORIA_ReadMe_057.xlsx|||`Sectors$`" type="V_String" column="7" />
+                <Field name="Ind_prd" size="255" source="File: C:\Users\etber\OneDrive - Danmarks Tekniske Universitet\Dokumenter\SDSN\GCSI\Data\GLORIA_Label\Industry_vs_Product.xlsx|||`Sheet1$`" type="V_String" column="8" />
+                <Field name="Value" source="File: (Multiple Sources)" type="Double" column="9" />
+                <Field name="Indicator" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="10" />
+                <Field name="Category" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" column="11" />
+                <Field name="Destination_country" size="2147483647" source="File: D:\GLORIA_MRIOS_55\results\GLORIA_Label_country_level_2.csv" type="V_String" column="13" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings>
+        <Position x="390" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">""</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1206" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">..\3. Tableau_Visualisation\Results\BIFROST_Result_DB.csv</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BIFROST_Result_DB.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1002" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Cost" selected="False" />
+            <SelectField field="Ind_prd" selected="False" />
+            <SelectField field="Full_Value" selected="False" />
+            <SelectField field="Category" selected="False" />
+            <SelectField field="Rank2-n_Value " selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1290" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Scenario" />
+            <Field field="Hypothesis" />
+            <Field field="Phase" />
+            <Field field="Step" />
+            <Field field="Sector_names" />
+            <Field field="Destination_country" />
+          </GroupFields>
+          <HeaderField field="Indicator" />
+          <DataField field="Rank1_Value" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+          <RetainSpecChars value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="Sector_names" size="255" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="Destination_country" size="2147483647" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="employment_hs" source="CrossTab:Header:Indicator:employment_hs:Sum:" type="Double" />
+            <Field name="employment_ls" source="CrossTab:Header:Indicator:employment_ls:Sum:" type="Double" />
+            <Field name="employment_ms" source="CrossTab:Header:Indicator:employment_ms:Sum:" type="Double" />
+            <Field name="GHG" source="CrossTab:Header:Indicator:GHG:Sum:" type="Double" />
+            <Field name="Net_Surplus" source="CrossTab:Header:Indicator:Net Surplus:Sum:" type="Double" />
+            <Field name="Subsidies" source="CrossTab:Header:Indicator:Subsidies:Sum:" type="Double" />
+            <Field name="Taxes" source="CrossTab:Header:Indicator:Taxes:Sum:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1014" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Cost" selected="False" />
+            <SelectField field="Ind_prd" selected="False" />
+            <SelectField field="Full_Value" selected="False" />
+            <SelectField field="Category" selected="False" />
+            <SelectField field="Rank1_Value" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1302" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Scenario" />
+            <Field field="Hypothesis" />
+            <Field field="Phase" />
+            <Field field="Step" />
+            <Field field="Sector_names" />
+            <Field field="Destination_country" />
+          </GroupFields>
+          <HeaderField field="Indicator" />
+          <DataField field="Rank2-n_Value " />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+          <RetainSpecChars value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from Full_ID" name="Scenario" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Hypothesis" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Phase" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field description="TextToColumns: Parsed from Full_ID" name="Step" size="254" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="Sector_names" size="255" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="Destination_country" size="2147483647" source="CrossTab:Group:Sum:" type="V_String" />
+            <Field name="employment_hs" source="CrossTab:Header:Indicator:employment_hs:Sum:" type="Double" />
+            <Field name="employment_ls" source="CrossTab:Header:Indicator:employment_ls:Sum:" type="Double" />
+            <Field name="employment_ms" source="CrossTab:Header:Indicator:employment_ms:Sum:" type="Double" />
+            <Field name="GHG" source="CrossTab:Header:Indicator:GHG:Sum:" type="Double" />
+            <Field name="Net_Surplus" source="CrossTab:Header:Indicator:Net Surplus:Sum:" type="Double" />
+            <Field name="Subsidies" source="CrossTab:Header:Indicator:Subsidies:Sum:" type="Double" />
+            <Field name="Taxes" source="CrossTab:Header:Indicator:Taxes:Sum:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1374" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;1&quot;" field="Rank" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Rank = "1"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1386" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;2-n&quot;" field="Rank" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Rank = "2-n"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1482" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1578" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">..\3. Tableau_Visualisation\Results\BIFROST_Result_DB_agg.csv</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>BIFROST_Result_DB_agg.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="690" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Full_Value]-[Rank1_Value]" field="Rank2-n_Value	" size="8" type="Double" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Rank2-n_Value	 = [Full_Value]-[Rank1_Value]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Right" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="3" Connection="Join" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="3" Connection="Left" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output26" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Visualisation_results</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a76bff8a-be10-4955-8ce0-b4bc351fa3e0" />
+      <Telemetry>
+        <PreviousWorkflowId value="0bc08c92-9d2c-4db4-aa84-2917333ac75e" />
+        <OriginWorkflowId value="0bc08c92-9d2c-4db4-aa84-2917333ac75e" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
