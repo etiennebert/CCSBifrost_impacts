@@ -88,16 +88,10 @@ Similarly, the Alteryx workflows (`.yxmd`) contain input/output paths that must 
 | Alteryx Designer | 2024.1+ | Data wrangling and cost vector construction |
 | Tableau Desktop | 2024.1+ | Figure generation |
 
-## License
-
-This code is provided under the [MIT License](LICENSE).
 
 ## Citation
 
 If you use this code or data, please cite the accompanying paper and the Zenodo data archive:
-
-**Paper:**
-> Berthet, E., Soytas, U., Ladenburg, J., & Morris, J. (2025). Expected Value Added and Employment Impacts of Climate-Related Offshore CCS in Denmark. *Energy Economics*.
 
 **Data and code:**
 > Berthet, E., Soytas, U., Ladenburg, J., & Morris, J. (2025). Replication data and code for: Expected Value Added and Employment Impacts of Climate-Related Offshore CCS in Denmark [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.18666671>
