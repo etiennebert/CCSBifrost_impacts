@@ -1,0 +1,43 @@
+item,position (0 = article),GLORIA sector,name,probability
+Gasification_and_injection#CAPEX,0,86,Machinery and equipment,0.5
+Gasification_and_injection#CAPEX,1,88,Other transport equipment,0.35
+Gasification_and_injection#CAPEX,2,99,Civil engineering construction,0.15
+Gasification_and_injection#Energy,0,94,Distribution of gaseous fuels through mains,0.5
+Gasification_and_injection#Energy,1,63,Refined petroleum products,0.5
+Gasification_and_injection#OPEX,0,106,Services to transport,0.5
+Gasification_and_injection#OPEX,1,89,Repair and installation of machinery and equipment,0.35
+Gasification_and_injection#OPEX,2,114,"Professional, scientific and technical services",0.15
+Liquefaction#CAPEX,0,86,Machinery and equipment,0.5
+Liquefaction#CAPEX,1,99,Civil engineering construction,0.35
+Liquefaction#CAPEX,2,85,Fabricated metal products,0.15
+Liquefaction#Energy,0,93,"Electric power generation, transmission and distribution",1.0
+Liquefaction#OPEX,0,106,Services to transport,0.5
+Liquefaction#OPEX,1,67,Basic inorganic chemicals,0.35
+Liquefaction#OPEX,2,89,Repair and installation of machinery and equipment,0.15
+Loading#CAPEX,0,88,Other transport equipment,0.5
+Loading#CAPEX,1,86,Machinery and equipment,0.35
+Loading#CAPEX,2,99,Civil engineering construction,0.15
+Loading#Energy,0,93,"Electric power generation, transmission and distribution",1.0
+Loading#OPEX,0,106,Services to transport,0.5
+Loading#OPEX,1,89,Repair and installation of machinery and equipment,0.5
+Pipeline_transport#Energy,0,93,"Electric power generation, transmission and distribution",1.0
+Pipeline_transport#OPEX,0,103,Transport via pipeline,0.5
+Pipeline_transport#OPEX,1,94,Distribution of gaseous fuels through mains,0.35
+Pipeline_transport#OPEX,2,106,Services to transport,0.15
+Shipping_Transport#CAPEX,0,104,Water transport,0.5
+Shipping_Transport#CAPEX,1,88,Other transport equipment,0.5
+Shipping_Transport#Energy,0,94,Distribution of gaseous fuels through mains,0.5
+Shipping_Transport#Energy,1,63,Refined petroleum products,0.5
+Shipping_Transport#OPEX,0,104,Water transport,0.5
+Shipping_Transport#OPEX,1,106,Services to transport,0.5
+Storage#CAPEX,0,86,Machinery and equipment,0.5
+Storage#CAPEX,1,85,Fabricated metal products,0.35
+Storage#CAPEX,2,99,Civil engineering construction,0.15
+Storage#OPEX,0,106,Services to transport,0.5
+Storage#OPEX,1,89,Repair and installation of machinery and equipment,0.5
+Unloading#CAPEX,0,86,Machinery and equipment,0.5
+Unloading#CAPEX,1,88,Other transport equipment,0.35
+Unloading#CAPEX,2,99,Civil engineering construction,0.15
+Unloading#OPEX,0,106,Services to transport,0.5
+Unloading#OPEX,1,104,Water transport,0.35
+Unloading#OPEX,2,89,Repair and installation of machinery and equipment,0.15

@@ -32,6 +32,15 @@ All **input data and output results** (cost vectors, MRIO outputs, figures, and 
 │       ├── Agregation_Results_Rank1.yxmd# Aggregates rank-1 MRIO output
 │       └── Visualisation_results.yxmd   # Prepares data for Tableau visualisation
 │
+├── 4_Sensitivity/
+│   └── Alteryx_Flows/
+│       ├── Agregation_Results.yxmd      # Aggregates full-model MRIO output
+│       ├── Agregation_Results_Rank1.yxmd# Aggregates rank-1 MRIO output
+│       └── Visualisation_results.yxmd   # Prepares data for Tableau visualisation
+│   └── Matlab_Scripts/
+│       ├── GLORIA_BIFROST_Full.m        # Full Leontief inverse (L) multiplier analysis
+│       └── GLORIA_BIFROST_Rank1.m       # First-order (rank-1, A matrix) approximation
+│
 ├── LICENSE
 └── README.md
 ```

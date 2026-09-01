@@ -1,0 +1,19 @@
+item,gloria_index,gloria_sector,isic_rev4,spend A1 (M EUR),"spend per hypothesis (M EUR, average)"
+Liquefaction#CAPEX,86,Machinery and equipment,28,158.424066755,162.9077667575
+Liquefaction#OPEX,106,Services to transport,52,308.92693017224997,283.22038349125
+Liquefaction#Energy,93,"Electric power generation, transmission and distribution",351,2239.5208527188997,2239.5208527188997
+Storage#CAPEX,86,Machinery and equipment,28,108.7775313984,122.37472282319999
+Storage#OPEX,106,Services to transport,52,111.49696968335999,106.73795268468001
+Loading#CAPEX,88,Other transport equipment,30,16.6282914,19.12253511
+Loading#OPEX,106,Services to transport,52,11.475044618199998,12.4727421022
+Loading#Energy,93,"Electric power generation, transmission and distribution",351,4.537999999999999,4.538
+Pipeline_transport#OPEX,103,Transport via pipeline,4930,710.6339203125,726.658018515625
+Pipeline_transport#Energy,93,"Electric power generation, transmission and distribution",351,1026.9999999999998,1061.84
+Shipping_Transport#CAPEX,104,Water transport,50,228.04513919999997,177.3684416
+Shipping_Transport#OPEX,104,Water transport,50,804.1957928512898,733.1470496569377
+Shipping_Transport#Energy,94,Distribution of gaseous fuels through mains,352,61.87416995632135,62.40927648701341
+Unloading#CAPEX,86,Machinery and equipment,28,110.0,55.0
+Unloading#OPEX,106,Services to transport,52,4.572780135,2.2863900675
+Gasification_and_injection#CAPEX,86,Machinery and equipment,28,6.485033646000001,7.874683712999999
+Gasification_and_injection#OPEX,106,Services to transport,52,12.107771609400002,8.416290918600001
+Gasification_and_injection#Energy,94,Distribution of gaseous fuels through mains,352,53.93643223909999,54.519153865650004

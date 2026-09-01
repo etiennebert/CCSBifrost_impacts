@@ -1,0 +1,8 @@
+conclusion,holds in baseline,holds in one-at-a-time cases,holds in grouped cases,holds in Monte-Carlo draws (%)
+Danish VA: B1 (all liquefaction abroad) is the lowest of the six hypotheses,True,24/24,5/5,100.0
+"Danish VA: A1 > A3 > A2 (the earlier the full switch to pipeline, the better)",True,24/24,5/5,100.0
+"Danish VA: B3 > B2 > B1 (the more liquefaction sited in Denmark, the better)",True,24/24,5/5,100.0
+Danish NOS: A1 is the highest of the six hypotheses,True,23/24,5/5,83.27
+Global VA: spread between the highest and lowest hypothesis below 10%,True,24/24,5/5,83.85
+Danish jobs: B1 is the lowest of the six hypotheses,True,24/24,5/5,100.0
+Emissions: A2 is the lowest and B1 the highest of the six hypotheses,True,24/24,5/5,100.0
